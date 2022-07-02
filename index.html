@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="estilo.css" media="screen" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,800" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <title></title>
+    
+  </head>
+  <body>
+    <listagem-usuario" class="listagem">
+      <div id="app" class="group15">
+        
+        <div v-show="detalhar">
+          <div>
+            <detalhes-component
+            v-if="detalhe"
+            v-bind:detalhe="detalhe"
+            v-bind:key="detalhe.id"
+            
+            v-on:click.native="listarUsuarios()"
+            />
+            <button-voltar/>
+          </div>
+        </div>
+        
+        <div v-show="!detalhar">
+        <cabecalho-component class="usuarios"></cabecalho-component>
+        <div class="group14">
+          <p>
+            <button id="cadastrar" v-show="botaoCadastrar" class="novoUsuario rectangle4" @click="mostrarEsconder()">Novo usuário</button>
+          </p>
+          
+          <p>
+            <button id="Cancelar" v-show="botaoCancelar" class="cancelarUsuario rectangle40" @click="mostrarEsconder()">Cancelar</button>
+          </p>
+        </div>
+        <div v-show="mostrar">
+          <p class="text-box">Nome do usuário</p>
+          <p class="rectangle5">
+          <input 
+            type="text" 
+            placeholder="Insira um nome"
+            v-model="cadastrar.nome">
+          </p>
+          
+          <p class="text-box">Função do usuário</p>
+          <p class="rectangle5">
+              <select
+                v-model="cadastrar.funcao">
+                <option value="" selected>Selecione a função</option>
+                <option value="UI/UX Designer" >UI/UX Designer</option>
+                <option value="Tech Lead" >Tech Lead</option>
+                <option value="Gerente de Projetos" >Gerente de Projetos</option>
+                <option value="Desenvolvedor" >Desenvolvedor</option>
+              </select>
+          </p>
+
+            <p>
+              <input 
+                type="hidden" 
+                placeholder="Id do usuário"
+                v-model="cadastrar.id">
+              </p>
+
+            <p>
+              <button class="rectangle4 large-button salvarDados" @click="cadastrarUsuario()">Salvar dados do usuário</button>
+            </p>
+          </div>
+        
+          <div id="content">
+          <ul>
+            <usuario-component 
+              v-for="usuario in usuarios"
+              v-bind:usuario="usuario"
+              v-bind:key="usuario.id"
+              v-on:click.native="detalhesUsuario(usuario.id)"
+            />
+          </ul>
+          </div>
+        </div>
+      </div>
+    </listagem-usuario>
+
+  </body>
+
+  <script>
+    Vue.component ('listagem-usuario', {template: '<div></div>'})
+    Vue.component ('cabecalho-component', {template: '<h1> Usuários </h1>'})
+    Vue.component ('usuario-component', {
+      props: ['usuario'], 
+      template: '<div class="listStyle"><li class="rectangle1"><div class="avatar"><img class="rectangle2" v-bind:src=usuario.avatar></img></div><div class="group2"><p class="id">{{ "#" +usuario.id }}</p><p class="name">{{ usuario.first_name + " " + usuario.last_name}}</p><p class="email">{{ usuario.email }}</p></div></li></div>'
+    })
+    Vue.component ('detalhes-component', {
+      props: ['detalhe'], 
+      template: '<div><div class="topoDetalhes"><div class="identificador">{{"#" + detalhe.id}}</div><div><button class="voltar rectangle40" @click="listarUsuarios()">Voltar</button></div></div><div><img class="detalhesImagem" v-bind:src=detalhe.avatar></img></div><div><p class="nomeTag">Primeiro nome</p><p class="nomeTag">Último nome</p><p class="contentTag">{{detalhe.primeiroNome}}</p></div><div><p class="contentTag">{{detalhe.ultimoNome}}</></div><div class="mainDetalhes"> <div><p class="mainTag">Endereço de e-mail</p><p class="mainContent">{{detalhe.email}}</p><p class="mainTag">Link do avatar</p><p class="mainContent">{{detalhe.avatar}}</p><p class="mainTag">Link do suporte</p><p class="mainContent">{{detalhe.suporte}}</p><p class="mainTag">Descrição do usuário</p><p class="mainContent">{{detalhe.descricao}}</p></div></div></div>'})
+      Vue.component('button-voltar', {
+        template: '<button class="voltar rectangle40" @click="listarUsuarios()">Voltar</button>'
+      })
+    var app = new Vue ({
+      el: '#app',
+      mounted: function() {
+        this.listarUsuarios()
+      },
+      data: {
+        mostrar: false,
+        botaoCadastrar: true,
+        botaoCancelar: false,
+        detalhar: true,
+        usuarios: [],
+        detalhe: {
+          id: '',
+          primeiroNome: '',
+          ultimoNome: '',
+          email: '',
+          avatar: '',
+          suporte: '',
+          descricao: ''
+        },
+        usuario:{
+          id: '',
+          nome: '',
+          funcao: ''
+        },
+        cadastrar: {
+          nome: '',
+          funcao: ''
+        },
+        info:''
+      },
+      methods: {
+        async listarUsuarios(){
+          const res = await fetch("https://reqres.in/api/users")
+          const {data} = await res.json()
+          
+          this.usuarios = data
+          
+          this.detalhar = !this.detalhar
+          
+        },
+        async detalhesUsuario(id){
+          const response = await fetch(('https://reqres.in/api/users/' + id))
+          const {data} = await response.json()
+
+          const response2 = await fetch(('https://reqres.in/api/users/' + id))
+          const {support} = await response2.json()
+          
+          this.detalhe.id = data.id
+          this.detalhe.primeiroNome = data.first_name
+          this.detalhe.ultimoNome = data.last_name
+          this.detalhe.avatar = data.avatar
+          this.detalhe.email = data.email
+          
+          this.detalhe.suporte = support.url
+          this.detalhe.descricao = support.text
+
+          this.detalhar = !this.detalhar
+        },
+        cadastrarUsuario(){
+          fetch('https://reqres.in/api/users', {
+            method: 'post',
+            body: JSON.stringify(this.cadastrar),
+          })
+          .then((response) => response.json())
+          .then(data => {
+            console.log(data)
+          })
+          
+          this.mostrar = !this.mostrar
+          this.botaoCadastrar = !this.botaoCadastrar
+          this.botaoCancelar = !this.botaoCancelar
+        },
+        editarUsuario(){
+          fetch('https://reqres.in/api/users/2', {
+            method: 'put',
+            body: JSON.stringify(this.cadastrar),
+            headers: {
+              'content-type': 'application/json'
+            }
+          })
+          .then((response) => response.json())
+          .then(data => {
+            console.log(data)
+          })
+          
+        },
+        excluirUsuario(){
+          fetch('https://reqres.in/api/users/2')
+          .then((response) => response.json())
+          .then(data => {
+            console.log(data)
+          })
+        },
+        mostrarEsconder() {
+          this.mostrar = !this.mostrar
+          this.botaoCadastrar = !this.botaoCadastrar
+          this.botaoCancelar = !this.botaoCancelar
+        }
+      }
+    })
+  </script>
+</html>
