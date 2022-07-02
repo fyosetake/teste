@@ -1,0 +1,581 @@
+
+      html, body, div, span, applet, object, iframe,
+      h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+      a, abbr, acronym, address, big, cite, code,
+      del, dfn, em, img, ins, kbd, q, s, samp,
+      small, strike, b, sub, sup, tt, var,
+      b, u, i, center,
+      dl, dt, dd, ol, ul, li,
+      fieldset, form, label, legend,
+      table, caption, tbody, tfoot, thead, tr, th, td,
+      article, aside, canvas, details, embed,
+      figure, figcaption, footer, header, hgroup,
+      menu, nav, output, ruby, section, summary,
+      time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font-family: inherit;
+        vertical-align: baseline;
+      }
+      /* HTML5 display-role reset for older browsers */
+      article, aside, details, figcaption, figure,
+      footer, header, hgroup, menu, nav, section {
+        display: block;
+      }
+      body {
+        line-height: 1;
+      }
+      ol, ul {
+        list-style: none;
+      }
+      blockquote, q {
+        quotes: none;
+      }
+      blockquote:before, blockquote:after,
+      q:before, q:after {
+        content: '';
+        content: none;
+      }
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+    /* listagem-usuários */
+    .listagem{
+      position: relative;
+      width: 1280px;
+      height: 1102px;
+      background: #FFFFFF;
+    }
+    /* Group 1 */
+    .group1 {
+      position: absolute;
+      width: 229px;
+      height: 61px;
+      left: 348px;
+      top: 96px;
+    }
+
+    /* Group 2 */
+    .group2 {
+      /*position: absolute;*/
+      width: 428px;
+      height: 75px;
+      left: 483px;
+      top: 490px;
+      float: right;
+      padding: 20px;
+    }
+
+    /* Group 14 */
+    .group14 {
+      width: 185px;
+      height: 55px;
+      left: 751px;
+      top: 99px;
+      float: right;
+      display: contents;
+    }
+
+    /* Group 15 */
+    .group15 {
+      position: absolute;
+      width: 592px;
+      height: 761px;
+      left: 640px;
+      top: 96px;
+    }
+    .group15 li {
+      position: relative;
+    }
+    /* Group 21 */
+    .group21 {
+      /*position: absolute;*/
+      width: 584px;
+      height: 277px;
+      left: 348px;
+      top: 197px;
+    }
+
+    /* Usuários */
+    .usuarios {
+      /*position: absolute;*/
+      width: 229px;
+      height: 61px;
+      left: 348px;
+      top: 96px;
+
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 525;
+      font-size: 50px;
+      line-height: 61px;
+      float: left;
+
+      /* identical to box height */
+      letter-spacing: 0.2px;
+
+      color: #000000;
+    }
+    /* Novo usuário */
+    .novoUsuario {
+      position: absolute;
+      width: 104px;
+      height: 18px;
+      left: 792px;
+      top: 118px;
+
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 375;
+      font-size: 15px;
+      line-height: 18px;
+      letter-spacing: 0.2px;
+
+      color: #FFFFFF;
+    }
+    /* Cancelar usuário */
+    .cancelarUsuario {
+      position: absolute;
+      width: 104px;
+      height: 18px;
+      left: 792px;
+      top: 118px;
+
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 375;
+      font-size: 15px;
+      line-height: 18px;
+      letter-spacing: 0.2px;
+
+      color: #000000;
+    }
+
+    /* Rectangle 3 */
+    .rectangle3{ 
+      position: absolute;
+      width: 4px;
+      height: 20px;
+      left: 344px;
+      top: 757px;
+
+      background: #000000;
+    }
+
+    /* Rectangle 4 */
+    .rectangle4 {
+      position: inherit;
+      width: 185px;
+      height: 55px;
+      left: 751px;
+      top: 99px;
+
+      background: #000000;
+      border-radius: 5px;
+      border: none;
+      margin-left: 175px;
+    }
+
+    /* Rectangle 40 */
+    .rectangle40 {
+      position: inherit;
+      width: 185px;
+      height: 55px;
+      left: 751px;
+      top: 99px;
+
+      background: #F7F7F7;
+      border-radius: 5px;
+      border: none;
+      margin-left: 175px;
+    }
+    /* Rectangle 5 */
+    .rectangle5 {
+      box-sizing: border-box;
+
+      /*position: absolute;*/
+      width: 584px;
+      height: 55px;
+      left: 348px;
+      top: 229px;
+
+      border: 1px solid #E5E5E5;
+      border-radius: 5px;
+    }
+    /* #6 */
+    .classId {
+      position: absolute;
+      width: 22px;
+      height: 20px;
+      left: 483px;
+      top: 760px;
+
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+
+      /* identical to box height */
+      letter-spacing: 0.2px;
+
+      color: #797979;
+    }
+    /* Selecione a função */
+    #selecioneFuncao {
+      position: absolute;
+      width: 145px;
+      height: 18px;
+      left: 368px;
+      top: 358px;
+
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 18px;
+      letter-spacing: 0.2px;
+
+      color: #797979;
+    }
+    input {
+      box-shadow: 0 0 0 0;
+      outline: 0;
+      border: none;
+      position: relative;
+      width: 104px;
+      height: 18px;
+      left: 28px;
+      top: 16px;
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 18px;
+      letter-spacing: 0.2px;
+      color: #000000;
+      width: 90%;
+    }
+    select {
+      box-shadow: 0 0 0 0;
+      outline: 0;
+      border: none;
+      width: 100%;
+      height: 100%;
+      background: none;
+      position: relative;
+      width: 540px;
+      height: 18px;
+      left: 28px;
+      top: 16px;
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 18px;
+      letter-spacing: 0.2px;
+      color: #797979;
+    }
+
+    /* opções-funcao */
+    select:focus {
+      box-sizing: border-box;
+
+      width: 584px;
+      height: 166px;
+
+      background: #FFFFFF;
+      border: 1px solid #E5E5E5;
+      box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.05);
+      border-radius: 5px;
+    }
+    .large-button {
+      width: 100% !important;
+    }
+    
+    /* Salvar dados do usuário */
+    .salvarDados {
+      left: 546px;
+      top: 438px;
+
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 375;
+      font-size: 15px;
+      line-height: 18px;
+      letter-spacing: 0.2px;
+
+      color: #FFFFFF;
+      margin: 25px auto;
+    }
+    /* Nome do usuário */
+    .text-box {
+      width: 580px;
+      height: 20px;
+      left: 348px;
+      top: 197px;
+
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 375;
+      font-size: 16px;
+      line-height: 20px;
+
+
+      color: #000000;
+      padding: 40px 0px 10px 0px;
+    }
+
+    #content {
+      margin: 0px;
+    }
+
+    /* Rectangle 2 */
+    .rectangle2 {
+      /*position: absolute;*/
+      width: 80px;
+      height: 80px;
+      left: 378px;
+      top: 217px;
+
+      /*background: url(image.png);*/
+      border-radius: 5px;
+    }
+
+    .avatar {
+      float: left;
+      padding: 20px;
+    }
+
+    .id {
+      width: 18px;
+      height: 20px;
+      left: 483px;
+      top: 220px;
+
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+
+      /* identical to box height */
+      letter-spacing: 0.2px;
+
+      color: #797979;
+    }
+
+    .name {
+      width: 440px;
+      height: 22px;
+      left: 483px;
+      top: 385px;
+
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 375;
+      font-size: 18px;
+      line-height: 22px;
+
+      /* identical to box height */
+      letter-spacing: 0.2px;
+
+      color: #000000;
+      padding: 8px 0px 0px 0px;
+    }
+
+    .email {
+      width: 191px;
+      height: 20px;
+      left: 483px;
+      top: 410px;
+
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+
+      /* identical to box height */
+      letter-spacing: 0.2px;
+
+      color: #797979;
+      padding: 8px 0px 0px 0px;
+    }
+
+    /* Rectangle 1 */
+    .rectangle1 {
+      /*position: absolute;*/
+      width: 588px;
+      height: 120px;
+      /*left: 348px;
+      top: 737px;*/
+
+      background: #F7F7F7;
+      border-radius: 5px;
+      margin: -20px 0px 0px 4px;
+      padding: 0px 4px 0px 0px;
+      float: left;
+    }
+
+    .listStyle{
+      background: #000000;
+      height: 20px;
+      margin: 115px 0px 0px 0px;
+      float: left;
+    }
+
+    /* detalhes-usuario */
+    .detalhesUsuario {
+      position: relative;
+      width: 1280px;
+      height: 724px;
+
+      background: #FFFFFF;
+    }
+    .identificador {
+      width: 56px;
+      height: 61px;
+      left: 348px;
+      top: 95px;
+
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 525;
+      font-size: 50px;
+      line-height: 61px;
+
+      /* identical to box height */
+      letter-spacing: 0.2px;
+
+      color: #000000;
+      float: left;
+
+    }
+
+    .detalhesImagem {
+      width: 120px;
+      height: 120px;
+      left: 348px;
+      top: 198px;
+
+      border-radius: 5px;
+      float: left;
+    }
+
+    .voltar {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 375;
+      font-size: 15px;
+      line-height: 18px;
+      letter-spacing: 0.2px;
+
+      color: #000000;
+      float: right;
+    }
+
+    .topoDetalhes {
+      width: 590px;
+      height: 120px;
+      left: 751px;
+      top: 99px;
+      float: right;
+      display: block;
+    }
+
+    .mainDetalhes {
+      width: 590px;
+      height: 120px;
+      left: 751px;
+      top: 99px;
+      float: right;
+      display: block;
+    }
+
+    .nomeTag {
+      float: left;
+      width: 110px;
+      height: 17px;
+      left: 502px;
+      top: 232px;
+
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+
+      /* identical to box height */
+      letter-spacing: 0.2px;
+
+      color: #797979;
+      padding: 30px 30px 0px 30px;
+    }
+
+    .contentTag {
+      float: left;
+      width: 108px;
+      height: 17px;
+      left: 502px;
+      top: 232px;
+
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 375;
+      font-size: 16px;
+      line-height: 20px;
+
+      /* identical to box height */
+      letter-spacing: 0.2px;
+
+      color: #000000;
+      padding: 0px 30px 0px 30px;
+
+    }
+
+    .mainTag {
+      float: left;
+      width: 590px;
+      height: 17px;
+      left: 502px;
+      top: 232px;
+
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+
+      /* identical to box height */
+      letter-spacing: 0.2px;
+
+      color: #797979;
+      padding: 30px 0px 0px 0px;
+
+    }
+
+    .mainContent {
+      float: left;
+      width: 590px;
+      height: 17px;
+      left: 502px;
+      top: 232px;
+
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 375;
+      font-size: 16px;
+      line-height: 20px;
+
+      /* identical to box height */
+      letter-spacing: 0.2px;
+
+      color: #000000;
+
+
+    }
+    

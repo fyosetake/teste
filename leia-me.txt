@@ -1,0 +1,15 @@
+Prezado avaliador do teste,
+
+Estou muito grato pela oportunidade de realizar isto. Apesar de nunca ter trabalhado com Vue.js, percebi que é uma ótima ferramenta para
+codificação de interfaces.
+
+Infelizmente não pude fazer o teste com o melhor desempenho, utilizando apenas o template com divs e todo o visual constuído atraves de componentes.
+
+O Css também está bagunçado, tendo classes sem sentido, redundantes, mas foi apenas para codificar algo. Realmente gostaria de ter tido tempo para gerar um template padrão.
+
+De qualquer forma, submeto este produto inacabado (não pude experimentar as apis de icones, por exemplo, e o botão de voltar dos detalhes está apenas enfeitando, eu sei) para que 
+possa ver que procuro respeitar o design, tenho uma certa noção disso tudo e sempre posso me dedicar para estudar e me adequar aos protocolos, frameworks e padrões da empresa.
+
+cordialmente,
+
+Fernando Yosetake
